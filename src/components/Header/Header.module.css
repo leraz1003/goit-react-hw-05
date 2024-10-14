@@ -1,0 +1,13 @@
+.header {
+  background-color: #333; /* Темний фон для хедера */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff; /* Білий колір тексту */
+}
+.pageName {
+  font-size: 24px;
+  font-weight: bold;
+  color: #f0db4f; /* Приклад кольору для назви (жовтий) */
+}
