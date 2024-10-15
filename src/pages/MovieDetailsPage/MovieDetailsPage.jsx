@@ -6,7 +6,7 @@ import {
   useParams,
 } from "react-router-dom";
 import { fetchMoviesById } from "../../services/api";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import s from "./MovieDetailsPage.module.css";
 import clsx from "clsx";
 import { FadeLoader } from "react-spinners";
@@ -19,6 +19,8 @@ const MovieDetailsPage = () => {
   const buildLinkClass = ({ isActive }) => {
     return clsx(s.infoLink, isActive && s.active);
   };
+
+  const backLink = useRef(location.state ?? "/movies");
 
   useEffect(() => {
     const getMovie = async () => {
@@ -36,7 +38,7 @@ const MovieDetailsPage = () => {
     );
   return (
     <div className={s.movieDetailsContainer}>
-      <Link to={location.state?.from ?? "/"} className={s.backLink}>
+      <Link to={backLink.current} className={s.backLink}>
         ← Go back
       </Link>
       <div className={s.movieDetails}>
