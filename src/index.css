@@ -26,7 +26,7 @@ a {
   font-size: 18px;
   color: inherit;
 }
-a:hover {
-  background-color: #f0db4f; /* Жовтий фон при наведенні */
-  color: #333; /* Темний текст при наведенні */
-}
+/* a:hover {
+  background-color: #f0db4f; 
+  color: #333; 
+} */

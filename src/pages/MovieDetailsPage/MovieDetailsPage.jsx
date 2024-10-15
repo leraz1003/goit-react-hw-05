@@ -8,11 +8,17 @@ import {
 import { fetchMoviesById } from "../../services/api";
 import { Suspense, useEffect, useState } from "react";
 import s from "./MovieDetailsPage.module.css";
+import clsx from "clsx";
+import { FadeLoader } from "react-spinners";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const location = useLocation();
   const [movie, setMovie] = useState(null);
+
+  const buildLinkClass = ({ isActive }) => {
+    return clsx(s.infoLink, isActive && s.active);
+  };
 
   useEffect(() => {
     const getMovie = async () => {
@@ -22,7 +28,12 @@ const MovieDetailsPage = () => {
     getMovie();
   }, [movieId]);
 
-  if (!movie) return <p>Loading...</p>;
+  if (!movie)
+    return (
+      <div className={s.loaderContainer}>
+        <FadeLoader color="#f0db4f" />
+      </div>
+    );
   return (
     <div className={s.movieDetailsContainer}>
       <Link to={location.state?.from ?? "/"} className={s.backLink}>
@@ -49,17 +60,27 @@ const MovieDetailsPage = () => {
       </div>
 
       <div className={s.additionalInfo}>
-        <h3>Additional information</h3>
-        <ul>
-          <li>
-            <NavLink to="cast">Cast</NavLink>
+        <h3 className={s.infoTitle}>Additional information</h3>
+        <ul className={s.infoList}>
+          <li className={s.infoItem}>
+            <NavLink to="cast" className={buildLinkClass}>
+              Cast
+            </NavLink>
           </li>
-          <li>
-            <NavLink to="reviews">Reviews</NavLink>
+          <li className={s.infoItem}>
+            <NavLink to="reviews" className={buildLinkClass}>
+              Reviews
+            </NavLink>
           </li>
         </ul>
       </div>
-      <Suspense fallback={<h2>Second suspense</h2>}>
+      <Suspense
+        fallback={
+          <div className={s.loaderContainerWrap}>
+            <FadeLoader color="#f0db4f" />
+          </div>
+        }
+      >
         <Outlet />
       </Suspense>
     </div>

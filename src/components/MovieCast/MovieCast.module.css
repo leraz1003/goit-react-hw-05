@@ -1,0 +1,50 @@
+.castList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.castItem {
+  width: 200px;
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.castItem:hover {
+  transform: scale(1.05);
+}
+
+.actorImage,
+.placeholderImage {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.actorName {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.actorCharacter {
+  font-size: 14px;
+  color: #555;
+}
+
+.placeholderImage {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+  height: 225px;
+  background-color: #ccc; /* Сірий колір як запасне зображення */
+}

@@ -9,5 +9,6 @@
 .pageName {
   font-size: 24px;
   font-weight: bold;
+  text-decoration: none;
   color: #f0db4f; /* Приклад кольору для назви (жовтий) */
 }

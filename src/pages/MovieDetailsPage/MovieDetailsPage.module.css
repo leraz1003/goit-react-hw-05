@@ -72,12 +72,67 @@
   margin-bottom: 5px;
 }
 
-.additionalInfo a {
+.additionalInfo a:hover {
+  text-decoration: underline;
+}
+
+.additionalInfo {
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+
+.infoTitle {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.infoList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.infoItem {
+  margin-bottom: 15px;
+}
+
+.infoItem:last-child {
+  margin-bottom: 0;
+}
+
+.infoLink {
   text-decoration: none;
   color: #007bff;
   font-size: 16px;
+  text-decoration: none;
+  /* color: #007bff; */
+  font-size: 18px;
+  transition: color 0.3s ease, background-color 0.3s ease;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
-.additionalInfo a:hover {
-  text-decoration: underline;
+.infoLink:hover {
+  background-color: #f0db4f;
+}
+
+.active {
+  font-weight: bold;
+  background-color: #f0db4f;
+  color: #333;
+  border-radius: 5px;
+}
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Зробити контейнер повної висоти вікна браузера */
+}
+.loaderContainerWrap {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }

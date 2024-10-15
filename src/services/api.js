@@ -1,8 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "https://api.themoviedb.org/3/movie/";
-
-const KEY = "3e4269f67386b91eb2c1af6890850b9d";
+axios.defaults.baseURL = "https://api.themoviedb.org/3/";
 
 const options = {
   headers: {
@@ -26,7 +24,7 @@ export const fetchTrendingMovies = async () => {
 
 export const fetchMoviesById = async (movieId) => {
   try {
-    const { data } = await axios.get(`${movieId}`, options);
+    const { data } = await axios.get(`movie/${movieId}`, options);
     return data;
   } catch (error) {
     console.error("Error fetching trending movies:", error);
@@ -35,7 +33,7 @@ export const fetchMoviesById = async (movieId) => {
 
 export const fetchReviewsById = async (movieId) => {
   try {
-    const { data } = await axios.get(`${movieId}/reviews`, options);
+    const { data } = await axios.get(`movie/${movieId}/reviews`, options);
     return data;
   } catch (error) {
     console.error("Error fetching trending movies:", error);
@@ -44,7 +42,19 @@ export const fetchReviewsById = async (movieId) => {
 
 export const fetchCastById = async (movieId) => {
   try {
-    const { data } = await axios.get(`${movieId}/credits`, options);
+    const { data } = await axios.get(`movie/${movieId}/credits`, options);
+    return data;
+  } catch (error) {
+    console.error("Error fetching trending movies:", error);
+  }
+};
+
+export const fetchSearchMovie = async (name) => {
+  try {
+    const { data } = await axios.get(
+      `https://api.themoviedb.org/3/search/movie?query=${name}`,
+      options
+    );
     return data;
   } catch (error) {
     console.error("Error fetching trending movies:", error);

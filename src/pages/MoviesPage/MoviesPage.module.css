@@ -1,0 +1,43 @@
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Проміжок між полем введення та кнопкою */
+}
+
+.searchField {
+  width: 300px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #333;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.searchField:focus {
+  outline: none;
+  border: 1px solid #333;
+}
+
+.submitButton {
+  padding: 10px 15px;
+  background-color: #f0db4f; /* Жовтий фон */
+  color: #333; /* Темний текст */
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submitButton:hover {
+  background-color: #333; /* Темний фон при наведенні */
+  color: #f0db4f; /* Жовтий текст при наведенні */
+}
