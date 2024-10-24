@@ -38,7 +38,7 @@ const MoviesPage = () => {
         </Formik>
       </div>
 
-      <ul>
+      <ul className={s.list}>
         <MovieList movies={searchMovie} />
       </ul>
     </>

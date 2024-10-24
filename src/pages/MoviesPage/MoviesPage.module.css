@@ -28,8 +28,8 @@
 
 .submitButton {
   padding: 10px 15px;
-  background-color: #f0db4f; /* Жовтий фон */
-  color: #333; /* Темний текст */
+  background-color: #f0db4f;
+  color: #333;
   border: none;
   border-radius: 5px;
   font-size: 16px;
@@ -38,6 +38,30 @@
 }
 
 .submitButton:hover {
-  background-color: #333; /* Темний фон при наведенні */
-  color: #f0db4f; /* Жовтий текст при наведенні */
+  background-color: #333;
+  color: #f0db4f;
+}
+
+.list {
+  padding: 0 15px;
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 424px) {
+  .searchField {
+    width: 220px;
+    padding: 10px;
+
+    font-size: 14px;
+  }
+  .submitButton {
+    padding: 10px;
+    background-color: #f0db4f; /* Жовтий фон */
+    color: #333; /* Темний текст */
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
 }

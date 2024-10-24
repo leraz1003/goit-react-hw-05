@@ -17,7 +17,6 @@ const MovieCast = () => {
     getActors();
   }, [movieId]);
 
-  console.log("author", actors);
   return (
     <>
       <ul className={s.castList}>

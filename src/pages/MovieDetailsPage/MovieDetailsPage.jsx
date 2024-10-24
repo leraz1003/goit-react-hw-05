@@ -42,16 +42,20 @@ const MovieDetailsPage = () => {
         ← Go back
       </Link>
       <div className={s.movieDetails}>
-        <img
-          className={s.poster}
-          src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
-          alt={movie.title}
-        />
+        <div className={s.posterWrap}>
+          <img
+            className={s.poster}
+            src={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+            alt={movie.title}
+          />
+        </div>
         <div className={s.movieInfo}>
           <h1 className={s.title}>
             {movie.title} ({movie.release_date.split("-")[0]})
           </h1>
-          <p className={s.score}>User Score: {movie.vote_average * 10}%</p>
+          <p className={s.score}>
+            User Score: {(movie.vote_average * 10).toFixed(2)}%
+          </p>
           <h2>Overview</h2>
           <p className={s.overview}>{movie.overview}</p>
           <h2>Genres</h2>

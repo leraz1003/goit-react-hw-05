@@ -21,3 +21,13 @@
   background-color: #f0db4f;
   color: #333;
 }
+
+@media screen and (max-width: 768px) {
+  .nav {
+    gap: 10px;
+  }
+  .link {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+}

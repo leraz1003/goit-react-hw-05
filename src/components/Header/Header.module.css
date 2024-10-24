@@ -12,3 +12,12 @@
   text-decoration: none;
   color: #f0db4f; /* Приклад кольору для назви (жовтий) */
 }
+
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 10px;
+  }
+  .pageName {
+    font-size: 18px;
+  }
+}
